@@ -1,0 +1,25 @@
+.areaCronometro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    margin-top: 1rem;
+    .cronometro{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #585858;
+        border-radius: 2rem;
+        padding: 2rem;
+        height: calc(100% - 8.5rem);
+        justify-content: space-between;
+        .cronometro__titulo{
+            font-size: 1rem;
+        }
+        .cronometro__relogio{
+            height: 70%;
+            font-size: 6rem;
+        }
+    }
+}
