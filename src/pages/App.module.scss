@@ -1,0 +1,40 @@
+
+.AppStyle {
+  
+  width: 85%;
+  padding: 32px;
+  box-sizing: border-box;
+  height: 75vh;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 66px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.7px);
+  -webkit-backdrop-filter: blur(3.7px);
+
+  @media screen and (min-width:1280px)  {
+    grid-template-areas: 
+    "nova-tarefa tarefas"
+    "cronometro tarefas"
+    ;
+    column-gap: 64px;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: 750px 300px;
+    justify-content: center;
+    align-content: center;
+    padding: 64px;
+  }
+}
+
+.Titulo{
+  font-family: 'Pattaya', sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
+.ContainerPrincipal{
+  height: calc(100% - 2rem - 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
