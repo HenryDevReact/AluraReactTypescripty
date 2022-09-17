@@ -4,7 +4,13 @@ import Item from './Item/Item'
 import { InterTarefa } from "../../types/ITarefas";
 
 
-const Lista = ({tarefas, QuantTarefas} : {tarefas: InterTarefa[], QuantTarefas: number}) => {
+interface Props{
+    tarefas: InterTarefa[],
+    QuantTarefas: number,
+    selectTarefa: (tarefaSelecionada: InterTarefa) => void
+}
+
+const Lista = ({tarefas, QuantTarefas, selectTarefa} : Props) => {
     
     
         return(
@@ -15,7 +21,7 @@ const Lista = ({tarefas, QuantTarefas} : {tarefas: InterTarefa[], QuantTarefas: 
                     <ul className={style.lista}>
                         {tarefas.map((item, index) => (
                             <Item 
-                            
+                            selectTarefa={selectTarefa}
                             key={index}
                             {...item}
                             

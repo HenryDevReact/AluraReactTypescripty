@@ -9,15 +9,11 @@ class Formulario extends React.Component<{setTarefas: React.Dispatch<React.SetSt
     state = {
         tarefa: '',
         tempo: '00:00:00',
-        id: 0
     }
 
     AddTarefa(event: React.FormEvent){
         event.preventDefault();
-        this.setState({
-            id: Uuidv4()
-        })
-        this.props.setTarefas(OldTarefas => [...OldTarefas, {...this.state, completado: false, selecionado:false, editar: false}])
+        this.props.setTarefas(OldTarefas => [...OldTarefas, {...this.state, id: Uuidv4(), completado: false, selecionado:false, editar: false}])
         this.setState({
             tarefa: '',
             tempo: '00:00:00',

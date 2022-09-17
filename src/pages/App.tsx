@@ -8,7 +8,36 @@ import style  from './App.module.scss';
 
 function App() {
   const [tarefas, setTarefas] = useState<InterTarefa[] | []>([]);
-  const [editTarefas, setEditTarefas] = useState<InterTarefa>();
+  const [selecionada, setSelecionada] = useState<InterTarefa>({
+    tarefa: '',
+    tempo: '',
+    id: '', 
+    completado: false,
+    selecionado: false,
+    editar: false});
+
+  const Selecionar = (tarefaSelecionada : InterTarefa) => {
+      if (tarefaSelecionada.selecionado) {
+        setSelecionada({
+          tarefa: '',
+          tempo: '',
+          id: '', 
+          completado: false,
+          selecionado: false,
+          editar: false})
+        setTarefas(oldTarefas => oldTarefas.map(tarefa => ({
+          ...tarefa,
+          selecionado : tarefaSelecionada.id === tarefa.id? false : false
+        })))
+      }else{
+        setSelecionada(tarefaSelecionada)
+        setTarefas(oldTarefas => oldTarefas.map(tarefa => ({
+          ...tarefa,
+          selecionado : tarefaSelecionada.id === tarefa.id? true : false
+        })))
+      }
+  }
+
   return (
     <div className={style.ContainerPrincipal}>
       <div className={style.Titulo}>
@@ -16,12 +45,12 @@ function App() {
       </div>
       <div className={style.MainCard}>
         <div className={style.Forms}>
-          <Formulario setTarefas={setTarefas}  />
-          <Cronometro/>
+          <Formulario setTarefas={setTarefas}/>
+          <Cronometro selecionada={selecionada} />
         </div>
         <Lista tarefas={tarefas}
           QuantTarefas={tarefas.length}
-          
+          selectTarefa={Selecionar}
           />
       </div>
     </div>
