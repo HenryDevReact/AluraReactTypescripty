@@ -37,7 +37,7 @@
             flex-direction: column;
             width: 35%;
             @media screen and (max-width:540px)  {
-                width: auto;
+                width: calc(100% - 1.0rem);
                 margin: 0 .5rem;
             }
             .tempo__info{
