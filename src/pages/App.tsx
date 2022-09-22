@@ -30,15 +30,39 @@ function App() {
           selecionado : tarefaSelecionada.id === tarefa.id? false : false
         })))
       }else{
-        setSelecionada(tarefaSelecionada)
-        setTarefas(oldTarefas => oldTarefas.map(tarefa => ({
-          ...tarefa,
-          selecionado : tarefaSelecionada.id === tarefa.id? true : false
-        })))
+        if (!tarefaSelecionada.completado){
+          setSelecionada(tarefaSelecionada)
+          setTarefas(oldTarefas => oldTarefas.map(tarefa => ({
+            ...tarefa,
+            selecionado : tarefaSelecionada.id === tarefa.id? true : false
+          })))
+        }
       }
   }
 
-  return (
+  const Completar = () => {
+      if(selecionada){
+        setTarefas(Oldtarefas => Oldtarefas.map(tarefa => {
+          if (tarefa.id === selecionada.id){
+            return{
+              ...tarefa,
+              selecionado: false,
+              completado: true
+            }
+          }
+          return tarefa;
+        }))
+      }
+      setSelecionada({
+        tarefa: '',
+        tempo: '',
+        id: '', 
+        completado: false,
+        selecionado: false,
+        editar: false})
+  }
+
+  return ( 
     <div className={style.ContainerPrincipal}>
       <div className={style.Titulo}>
         <h1>Estudy</h1>
@@ -46,7 +70,7 @@ function App() {
       <div className={style.MainCard}>
         <div className={style.Forms}>
           <Formulario setTarefas={setTarefas}/>
-          <Cronometro selecionada={selecionada} />
+          <Cronometro selecionada={selecionada} completTarefa={Completar} />
         </div>
         <Lista tarefas={tarefas}
           QuantTarefas={tarefas.length}

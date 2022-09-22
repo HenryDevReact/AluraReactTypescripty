@@ -97,6 +97,7 @@ body {
 
 }
 
+
 ::-webkit-scrollbar {
 	width: 8px;
 }
@@ -116,3 +117,8 @@ body {
 html {
 	height: 100%;
 }
+@media screen and (max-width:770px)  {
+	html{
+		height: auto;
+	}
+  }

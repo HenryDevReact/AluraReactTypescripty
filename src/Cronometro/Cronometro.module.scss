@@ -20,6 +20,9 @@
         .cronometro__relogio{
             height: 70%;
             font-size: 6.001rem;
+            @media screen and (max-width:540px)  {
+                font-size: 4.001rem;
+              }
         }
     }
 }

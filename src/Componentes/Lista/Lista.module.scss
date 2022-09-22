@@ -21,14 +21,27 @@
             margin: 1rem 0 1rem .3rem;
             padding: 1.2rem;
             transition: 400ms;
-            
-            .lista__tarefa{
-                font-size: 1rem;
-                margin: .2rem 0 ;
-                font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .lista__item__info{
+
+                .lista__tarefa{
+                    font-size: 1rem;
+                    margin: .2rem 0 ;
+                    font-weight: bold;
+                }
+                .lista__temp{
+                    font-size: 1.3rem;
+                }
             }
-            .lista__temp{
-                font-size: 1.3rem;
+            
+            .lista__icon{
+                width: 20px;
+                height: 20px;
+                background-image: url('../../../public/32282.png');
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
         .lista__item:hover{
@@ -38,8 +51,16 @@
         .lista__item__Select{
             background-color: #DE5AFF;
         }
+        .lista__item__complet{
+            background-color: #68ff5a;
+            
+        }
     }
-    
+    @media screen and (max-width:770px)  {
+        width: calc(100% - 5rem);
+        margin: 1rem;
+        margin-bottom: 0;
+      } 
 }
 .areaLista__empyt{
     justify-content: center;
@@ -54,4 +75,9 @@
         width: 100%;
         text-align: center;
     }
+    @media screen and (max-width:770px)  {
+        width: calc(100% - 5rem);
+        margin: 1rem;
+        margin-bottom: 0;
+      }
 }

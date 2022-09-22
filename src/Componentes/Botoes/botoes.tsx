@@ -6,6 +6,7 @@ class Botao extends React.Component<{texto: string,  onClick?: () => void}> {
         return(
             <button className={style.botaoAdicionar} onClick={this.props.onClick}>
                 {this.props.texto}
+                
             </button>
         )
     }
