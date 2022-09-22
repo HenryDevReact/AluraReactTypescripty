@@ -9,11 +9,17 @@
         width: 100;
         padding: 1.65rem;
         color: #585858;
+        @media screen and (max-width:540px)  {
+            flex-direction: column;
+        }
         .cadastro__tarefa{
             display: flex;
             flex-direction: column;
             width: calc(65% - .5rem);
             margin: 0 .5rem;
+            @media screen and (max-width:540px)  {
+                width: auto;
+            }
             .tarefa__info{
                 margin: .5rem;
 
@@ -30,6 +36,10 @@
             display: flex;
             flex-direction: column;
             width: 35%;
+            @media screen and (max-width:540px)  {
+                width: auto;
+                margin: 0 .5rem;
+            }
             .tempo__info{
                 margin: .5rem;
             }
