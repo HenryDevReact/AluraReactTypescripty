@@ -4,7 +4,7 @@ import Relogio from './Relogio/Relogio'
 import { InterTarefa, InterTime } from '../types/ITarefas'
 import React, {useEffect, useState} from 'react';
 
-var interval: any
+var interval: NodeJS.Timer
 
 interface Props{
     selecionada: InterTarefa,
